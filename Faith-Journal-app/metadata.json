@@ -1,0 +1,5 @@
+{
+  "name": "Faith Journal",
+  "description": "A mobile-first application to record, store, and export entries for testimonies, gratitudes, and prayer requests. It works completely offline and keeps your data private on your device.",
+  "requestFramePermissions": []
+}

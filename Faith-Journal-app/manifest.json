@@ -1,0 +1,16 @@
+{
+  "short_name": "Faith Journal",
+  "name": "Faith Journal",
+  "description": "A mobile-first application to record, store, and export entries for testimonies, gratitudes, and prayer requests. It works completely offline and keeps your data private on your device.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4d7cbf",
+  "background_color": "#f1f5f9"
+}
