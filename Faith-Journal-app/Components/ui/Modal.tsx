@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { XIcon } from '../icons';
+import { XIcon } from '../icons.tsx';
 
 interface ModalProps {
   isOpen: boolean;
@@ -34,5 +34,3 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     </div>
   );
 };
-
-export default Modal;
