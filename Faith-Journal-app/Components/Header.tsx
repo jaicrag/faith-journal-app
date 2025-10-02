@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { useLocalization } from '../hooks/useLocalization';
-import { type View } from '../types';
-import { LayoutDashboardIcon, ListIcon, SettingsIcon, BookOpenIcon } from './icons';
+import { useLocalization } from '../hooks/useLocalization.ts';
+import { type View } from '../types.ts';
+import { LayoutDashboardIcon, ListIcon, SettingsIcon, BookOpenIcon } from './icons.tsx';
 
 interface HeaderProps {
     currentView: View;
@@ -47,5 +47,3 @@ const Header: React.FC<HeaderProps> = ({ currentView, setCurrentView }) => {
         </header>
     );
 };
-
-export default Header;
