@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { type Entry, EntryType, Status } from '../types';
-import { useLocalization } from '../hooks/useLocalization';
-import Card from './ui/Card';
-import { TagIcon, UserIcon } from './icons';
+import { type Entry, EntryType, Status } from '../types.ts';
+import { useLocalization } from '../hooks/useLocalization.ts';
+import Card from './ui/Card.tsx';
+import { TagIcon, UserIcon } from './icons.tsx';
 
 interface DashboardProps {
   entries: Entry[];
