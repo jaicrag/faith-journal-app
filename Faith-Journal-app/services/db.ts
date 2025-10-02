@@ -1,7 +1,6 @@
-
 import { openDB, type IDBPDatabase } from 'idb';
-import { type Entry } from '../types';
-import { DB_NAME, DB_VERSION, STORE_NAME } from '../constants';
+import { type Entry } from '../types.ts';
+import { DB_NAME, DB_VERSION, STORE_NAME } from '../constants.ts';
 
 let dbPromise: Promise<IDBPDatabase> | null = null;
 
@@ -28,7 +27,8 @@ export const addEntry = async (entry: Omit<Entry, 'id' | 'createdAt' | 'updatedA
     const db = await getDb();
     const now = Date.now();
     const newEntry = { ...entry, createdAt: now, updatedAt: now } as Omit<Entry, 'id'>;
-    const id = await db.add(STORE_NAME, newEntry);
+    // FIX: Cast the returned key to number, as autoIncrement is true.
+    const id = await db.add(STORE_NAME, newEntry) as number;
     return { ...newEntry, id };
 };
 
