@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { useLocalization } from '../hooks/useLocalization';
-import { type Language } from '../types';
-import Card from './ui/Card';
-import Select from './ui/Select';
-import Button from './ui/Button';
+import { useLocalization } from '../hooks/useLocalization.ts';
+import { type Language } from '../types.ts';
+import Card from './ui/Card.tsx';
+import Select from './ui/Select.tsx';
+import Button from './ui/Button.tsx';
 
 interface SettingsProps {
     onClearData: () => void;
@@ -53,5 +53,3 @@ const Settings: React.FC<SettingsProps> = ({ onClearData }) => {
         </div>
     );
 };
-
-export default Settings;
