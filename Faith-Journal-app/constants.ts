@@ -1,4 +1,4 @@
-import { type Translations } from './types';
+import { type Translations } from './types.ts';
 
 export const DB_NAME = 'FaithJournalDB';
 export const DB_VERSION = 1;
