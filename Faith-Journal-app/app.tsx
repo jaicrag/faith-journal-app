@@ -1,14 +1,14 @@
 
 import React, { useState, useCallback } from 'react';
-import { LocalizationProvider, useLocalization } from './hooks/useLocalization';
-import { useEntries } from './hooks/useEntries';
-import Header from './components/Header';
-import Dashboard from './components/Dashboard';
-import EntryList from './components/EntryList';
-import Settings from './components/Settings';
-import EntryForm from './components/EntryForm';
-import { type Entry, type EntryType, type View } from './types';
-import { PlusIcon } from './components/icons';
+import { LocalizationProvider, useLocalization } from './hooks/useLocalization.ts';
+import { useEntries } from './hooks/useEntries.ts';
+import Header from './components/Header.tsx';
+import Dashboard from './components/Dashboard.tsx';
+import EntryList from './components/EntryList.tsx';
+import Settings from './components/Settings.tsx';
+import EntryForm from './components/EntryForm.tsx';
+import { type Entry, type EntryType, type View } from './types.ts';
+import { PlusIcon } from './components/icons.tsx';
 
 const AppContent: React.FC = () => {
     const [currentView, setCurrentView] = useState<View>('dashboard');
