@@ -1,12 +1,12 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { type Entry, EntryType, Status } from '../types';
-import { useLocalization } from '../hooks/useLocalization';
-import { exportToPDF } from '../services/pdfExporter';
-import Input from './ui/Input';
-import Select from './ui/Select';
-import Button from './ui/Button';
-import Card from './ui/Card';
-import { EditIcon, Trash2Icon, FileDownIcon, ChevronDownIcon, ChevronUpIcon } from './icons';
+import { type Entry, EntryType, Status } from '../types.ts';
+import { useLocalization } from '../hooks/useLocalization.ts';
+import { exportToPDF } from '../services/pdfExporter.ts';
+import Input from './ui/Input.tsx';
+import Select from './ui/Select.tsx';
+import Button from './ui/Button.tsx';
+import Card from './ui/Card.tsx';
+import { EditIcon, Trash2Icon, FileDownIcon, ChevronDownIcon, ChevronUpIcon } from './icons.tsx';
 
 interface EntryListProps {
   entries: Entry[];
@@ -250,5 +250,3 @@ const EntryList: React.FC<EntryListProps> = ({ entries, onEdit, onDelete }) => {
     </div>
   );
 };
-
-export default EntryList;
