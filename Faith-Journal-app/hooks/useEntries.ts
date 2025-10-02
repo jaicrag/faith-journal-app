@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
-import { type Entry } from '../types';
-import * as db from '../services/db';
+import { type Entry } from '../types.ts';
+import * as db from '../services/db.ts';
 
 export const useEntries = () => {
   const [entries, setEntries] = useState<Entry[]>([]);
@@ -58,6 +58,3 @@ export const useEntries = () => {
       console.error("Failed to clear entries:", error);
     }
   }, [fetchEntries]);
-
-  return { entries, loading, addEntry, updateEntry, deleteEntry, clearAllEntries };
-};
