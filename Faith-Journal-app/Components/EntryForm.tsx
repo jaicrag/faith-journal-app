@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { type Entry, EntryType, Status } from '../types';
-import { useLocalization } from '../hooks/useLocalization';
-import Modal from './ui/Modal';
-import Input from './ui/Input';
-import Select from './ui/Select';
-import Textarea from './ui/Textarea';
-import Button from './ui/Button';
+import { type Entry, EntryType, Status } from '../types.ts';
+import { useLocalization } from '../hooks/useLocalization.ts';
+import Modal from './ui/Modal.tsx';
+import Input from './ui/Input.tsx';
+import Select from './ui/Select.tsx';
+import Textarea from './ui/Textarea.tsx';
+import Button from './ui/Button.tsx';
 
 interface EntryFormProps {
     isOpen: boolean;
@@ -147,5 +147,3 @@ const EntryForm: React.FC<EntryFormProps> = ({ isOpen, onClose, onSave, entry })
         </Modal>
     );
 };
-
-export default EntryForm;
