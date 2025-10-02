@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import { type Entry, EntryType, Status } from '../types';
+import { type Entry, EntryType, Status } from '../types.ts';
 
 const getStatusText = (status: Status | undefined, t: (key: string) => string) => {
     if (!status) return '';
