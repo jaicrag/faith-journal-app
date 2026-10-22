@@ -5,6 +5,8 @@ on:
     paths:
       - 'numera-android/**'
       - '.github/workflows/numera-android.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
@@ -35,6 +37,7 @@ jobs:
           name: NUMERA-APK
           path: releases/NUMERA-1.0.apk
       - name: Publish APK in repository
+        if: github.event_name == 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
