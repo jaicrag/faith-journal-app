@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+  <!-- Sleek golden frame stays inside the Android adaptive-icon safe zone. -->
+  <path android:fillColor="#E5B85F" android:pathData="M29,18 H79 Q90,18 90,29 V79 Q90,90 79,90 H29 Q18,90 18,79 V29 Q18,18 29,18 Z"/>
+  <path android:fillColor="#0D2C40" android:pathData="M29,20 H79 Q88,20 88,29 V79 Q88,88 79,88 H29 Q20,88 20,79 V29 Q20,20 29,20 Z"/>
+  <path android:fillColor="#124B57" android:pathData="M29,22 H79 Q86,22 86,29 V79 Q86,86 79,86 H29 Q22,86 22,79 V29 Q22,22 29,22 Z"/>
+  <path android:fillColor="#0B2234" android:pathData="M29,25 H79 Q83,25 83,29 V79 Q83,83 79,83 H29 Q25,83 25,79 V29 Q25,25 29,25 Z"/>
+  <!-- Monogram N paired with counting bars and a plus badge. -->
+  <path android:fillColor="#FFE3A0" android:pathData="M31,73 V37 H41 L58,58 V37 H68 V73 H58 L41,52 V73 Z"/>
+  <path android:fillColor="#C78837" android:pathData="M31,73 H34 V42 L58,71 H68 V73 H58 L41,52 V73 Z"/>
+  <path android:fillColor="#27DBBD" android:pathData="M71,47 H75 V58 H71 Z"/>
+  <path android:fillColor="#4BC6FC" android:pathData="M78,40 H82 V58 H78 Z"/>
+  <path android:fillColor="#FFD16D" android:pathData="M85,33 H89 V58 H85 Z"/>
+  <path android:fillColor="#E5B85F" android:pathData="M68,68 a17,17 0,1 0,34 0 a17,17 0,1 0,-34 0"/>
+  <path android:fillColor="#0C807D" android:pathData="M70.5,68 a14.5,14.5 0,1 0,29 0 a14.5,14.5 0,1 0,-29 0"/>
+  <path android:fillColor="#FFF3CE" android:pathData="M82,59 H87 V65 H93 V70 H87 V76 H82 V70 H76 V65 H82 Z"/>
+</vector>
