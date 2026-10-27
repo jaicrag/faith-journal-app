@@ -9,7 +9,7 @@ on:
     branches: [main]
   workflow_dispatch:
 concurrency:
-  group: numera-15-ux-build
+  group: numera-16-about-build
   cancel-in-progress: false
 permissions:
   contents: write
@@ -40,6 +40,8 @@ jobs:
           const end = html.indexOf('</script>', start);
           if (start < 0 || end < 0) throw new Error('Missing application script');
           new Function(html.slice(start + 8, end));
+          if (html.includes('NÚMERA 1.1')) throw new Error('Outdated version string');
+          for(const token of ['Acerca de NÚMERA','data-action="about"','Android.getVersion']) if(!html.includes(token)) throw new Error('Missing About/version functionality: '+token);
           for (const token of ['Administrar categorías','Ver sesiones','rename-session','move-item','goalMode','fractionalMode']) {
             if (!html.includes(token)) throw new Error('Missing: '+token);
           }
@@ -51,13 +53,14 @@ jobs:
       - name: Prepare APK
         run: |
           mkdir -p releases
-          cp numera-android/app/build/outputs/apk/debug/app-debug.apk releases/NUMERA-1.5.apk
-          sha256sum releases/NUMERA-1.5.apk > releases/SHA256SUMS.txt
-          unzip -t releases/NUMERA-1.5.apk | tail -1
-          unzip -p releases/NUMERA-1.5.apk assets/index.html | grep -q 'Administrar categorías'
-          unzip -p releases/NUMERA-1.5.apk assets/index.html | grep -q 'Ver sesiones'
-          unzip -l releases/NUMERA-1.5.apk | grep -E 'res/(mipmap|drawable)' > /dev/null || exit 1
+          cp numera-android/app/build/outputs/apk/debug/app-debug.apk releases/NUMERA-1.6.apk
+          sha256sum releases/NUMERA-1.6.apk > releases/SHA256SUMS.txt
+          unzip -t releases/NUMERA-1.6.apk | tail -1
+          unzip -p releases/NUMERA-1.6.apk assets/index.html | grep -q 'Administrar categorías'
+          unzip -p releases/NUMERA-1.6.apk assets/index.html | grep -q 'Ver sesiones'
+          unzip -p releases/NUMERA-1.6.apk assets/index.html | grep -q 'Acerca de NÚMERA'
+          unzip -l releases/NUMERA-1.6.apk | grep -E 'res/(mipmap|drawable)' > /dev/null || exit 1
       - uses: actions/upload-artifact@v4
         with:
-          name: NUMERA-1.5-APK
-          path: releases/NUMERA-1.5.apk
+          name: NUMERA-1.6-APK
+          path: releases/NUMERA-1.6.apk
