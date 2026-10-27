@@ -35,6 +35,10 @@ public class MainActivity extends Activity {
   web.loadUrl("file:///android_asset/index.html");
  }
  public class Bridge {
+  @JavascriptInterface public String getVersion(){
+   try{return MainActivity.this.getPackageManager().getPackageInfo(MainActivity.this.getPackageName(),0).versionName;}
+   catch(Exception e){return "1.6.0";}
+  }
   @JavascriptInterface public void saveFile(String filename,String data,String mime){
    runOnUiThread(()->{try {
     pending=Base64.decode(data,Base64.DEFAULT);
