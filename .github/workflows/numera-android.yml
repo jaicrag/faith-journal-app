@@ -36,9 +36,10 @@ jobs:
           node <<'NODE'
           const fs = require('node:fs');
           const html = fs.readFileSync('numera-android/app/src/main/assets/index.html', 'utf8');
-          const m = html.match(/<script>([\\s\\S]*?)<\\/script>/);
-          if (!m) throw new Error('Missing application script');
-          new Function(m[1]);
+          const start = html.indexOf('<script>');
+          const end = html.indexOf('</script>', start);
+          if (start < 0 || end < 0) throw new Error('Missing application script');
+          new Function(html.slice(start + 8, end));
           for (const token of ['Administrar categorías','Ver sesiones','rename-session','move-item','goalMode','fractionalMode']) {
             if (!html.includes(token)) throw new Error('Missing: '+token);
           }
